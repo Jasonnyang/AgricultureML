@@ -4,4 +4,4 @@ All of our data is numerical. In our dataset we discovered that there was missin
 
 Some strategies we will use to preprocess our data is doing min max normalization in order to get all our numbers within a specific range. We will do this because comparing crop yields across different states is challenging since one crop could produce 50kg per hectare and others can produce 5 tons per hectare and it would be hard to compare without some sort of normalization technique. We will also throw out any missing values by only taking into account observations with values >= 0 because we don't want to normalize a distribution with numbers from -1 to n because it would throw the entire distribution off. 
 
-Our [Colab Notebook]([https://colab.research.google.com/your/colab/link/here](https://colab.research.google.com/drive/1LZSfZZS8Dh74Gep_nfKY4WyoMBdtk_At?usp=sharing)https://colab.research.google.com/drive/1LZSfZZS8Dh74Gep_nfKY4WyoMBdtk_At?usp=sharing)
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LZSfZZS8Dh74Gep_nfKY4WyoMBdtk_At?usp=sharing)
