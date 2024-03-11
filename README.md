@@ -12,6 +12,15 @@ The next two models we are thinking about trying is a convolutional neural netwo
 
 The conclusion of our first model implies that there are some features of a state's crop yields and statistics which can be used to identify it. This is very good news because it means our problem is actually solvable. If there was no relationship between our X and y, we would have to choose a different set of features to look at. In order to improve our model, we could do some hyperparameter tuning. We could experiment with different solvers and/or stopping criteria for our Logistic Regression Model.
 
+## Milestone 4
+The data seemed sufficient because we have over ten thousand observations and labels to where we didn't need to generate additional data. We trained our second model which was a random forest classifier and we got Train Error: 0.01 and Test Error: 2.05 which was significantly smaller than the logistic regression model that we used initially. I think our model is a lot more complex than the logistic regression model and is closer to fitting just right compared to the logistic regression which was likely underfitting the data. We implemented hyper parameter tuning and k-fold cross validation so we can average out the model to give us an indicator if the model is overfitting. 
+
+The result of the hyperparameter tuning is that a max depth of 20, minimum samples split of 2, and n estimators of 300 gave us the best results and got us to 96% accuracy. When we did k-fold cross validation for k=5 we got the following accuracies 0.77956792 0.91724643 0.86671549 0.83376053 0.81282051 and it gave us a Mean cross-validation score of 0.84.
+
+The last model we are thinking about trying is a convolutional neural network. We have been learning about convolutional neural networks in class, and I think this will be more effective than logistic regression in our classification problem. A CNN might be able to capture some of the hidden patterns in our data that logistic regression cannot capture and it might be computationally less expensive than a super expansive decision tree. 
+
+The conclusion of our second model implies that there are some features of a state's crop yields and statistics which can be used to identify it. It shows that there is a stronger link between the features and the state code than we originally imagined. In the end we had an accuracy of 84% by running the k-fold cross validation on the most optimal hyperparameters which was higher than the logistic regression likely because the model was more complex and was able to fit the data in a more complex manner. To improve the decision trees, it would be nice if we had the computational power to build more expansive trees and have a greater depth. 
+
 Setup Instructions: 
 Download and clone the Colab notebook. Any necessary imports or pip installs are included at the top of the notebook already. 
 
