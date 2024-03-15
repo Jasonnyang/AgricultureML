@@ -21,6 +21,14 @@ The last model we are thinking about trying is a convolutional neural network. W
 
 The conclusion of our second model implies that there are some features of a state's crop yields and statistics which can be used to identify it. It shows that there is a stronger link between the features and the state code than we originally imagined. In the end we had an accuracy of 84% by running the k-fold cross validation on the most optimal hyperparameters which was higher than the logistic regression likely because the model was more complex and was able to fit the data in a more complex manner. To improve the decision trees, it would be nice if we had the computational power to build more expansive trees and have a greater depth. 
 
+## Milestone 5
+We used the same data labels and scaling as in the Random Forest Classifier. For our loss funciton, we used sparse categorical cross entropy and experimented with different model optimizers (Adam and SGD). We have plenty of data points for each region, so we should have enough data poitns to achieve reasonable accuracy.
+
+Tbe result of the hyperparameter tuning is the best parameters is the number of hidden layers of 1, model units is 512, learning rate of 0.001 and achieved a best accurafcy of 76%. When verifying our result with k-fold cross validaition (k=5), we got the following the accuracy scores for each fold: 0.62980593 0.77187843 0.70157451 0.73855731 0.66630037, and it gave a mean cross-validation score of 0.70.
+
+The conclusion of our third model is that a neural network is slightly overfitting our data. It is possible that our data is not as complex as we orginally thought, and a random forest / logistic regression is a better model for our data. Initially, we overfitting even more (91% train accuracy vs a 60% test) with a hard coded 3 hidden layers, so we hyperparameter tuned on hidden layers and found that only 1 layer produced the best result. To improve our model, we can test other properties, like acivation functions or loss functions which could produce better resutls.
+
+
 Setup Instructions: 
 Download and clone the Colab notebook. Any necessary imports or pip installs are included at the top of the notebook already. 
 
