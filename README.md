@@ -13,8 +13,8 @@ Essentially, this project is more than just a group project but a step towards e
 ### Data Exploration:
 Our initial step involves examining the dataset and finding the minimum, maximum, median, and counts of our dataset. We also identified that the missing values were encoded as -1 instead of NaN in our dataset. This step was crucial in guiding our preprocessing decisions and model selection. We created pairplots to uncover any hidden relationships in our data and we printed out the columns to see which features we wanted to include in our final model since we had 79 columns or features to choose from. Then we got histogram representations of each column to identify any distribution patterns.
 
-
-
+![Pairplots]([pairplot.png)
+![Histograms](histogram.png)
 
 ### Preprocessing:
 All of our data is numerical. In our dataset, we discovered that there were missing data values but they were encoded with the number -1. We could resolve this by using strategies like taking a random value in the range or by using the mean or we will throw those values out. In our case, we decided to throw the data values out because we were worried that when training our classifier, choosing a random value could cause the model to perform poorly since it will be trained on randomly generated data that may or may not conform to the trends in the data. If there was categorical data, we would need to label or one hot encode the values but the dataset is all numerical. 
@@ -36,19 +36,25 @@ Lastly, we implemented a DNN, which is particularly known for its customizabilit
 ### Model 1 - Logistic Regression
 The logistic regression model is either underfitting or might be a good fit based on the train and test error. The train and test accuracy is very similar which is a good thing because it indicates that the model is not overfitting to the training data and causing it to perform poorly on the test dataset. However, logistic regression is a pretty simple model and because we have so many features in our dataset, it could not be capturing the complexities in the dataset as well as it could be, despite a high 82% accuracy on our model. The decision boundary might not be a good fit for the data because it is too simple to capture all the classes in the feature space. Below is the confusion matrix of our first model’s performance.
 
+![Confusion Matrix](conf1.png)
 
 ### Model 2 - Random Forest Classifier
 We trained our second model which was a random forest classifier and we got Train Error: 0.01 and Test Error: 2.05 which was significantly smaller than the logistic regression model that we used initially. I think our model is a lot more complex than the logistic regression model and is closer to fitting just right compared to the logistic regression which was likely underfitting the data. We implemented hyper parameter tuning and k-fold cross validation so we can average out the model to give us an indicator if the model is overfitting. 
 
 The result of the hyperparameter tuning is that a max depth of 20, minimum samples split of 2, and n estimators of 300 gave us the best results and got us to 96% accuracy. When we did k-fold cross validation for k=5 we got the following accuracies: 0.77956792 0.91724643 0.86671549 0.83376053 0.81282051 and it gave us a Mean cross-validation score of 0.84. Below is the confusion matrix for the Random Forest’s performance.
 
+![Confusion Matrix](conf2.png)
+
 Additionally, we can see which features the random forest prioritized. We graphed them below.
+
+![Feature Importance](forest.png)
 
 ### Model 3 - Deep Neural Network
 We used the same data labels and scaling as in the Random Forest Classifier. For our loss function, we used sparse categorical cross entropy and experimented with different model optimizers (Adam and SGD). We have plenty of data points for each region, so we should have enough data points to achieve reasonable accuracy. We got a MSE train error of about 7.6 and a test error of about 9.8.
 
 The result of the hyperparameter tuning with the best parameters is the number of hidden layers of 1, model units is 512, learning rate of 0.001 and achieved a best accuracy of 76%. When verifying our result with k-fold cross validation (k=5), we got the following the accuracy scores for each fold: 0.67118272 0.80959356 0.75137312 0.75503479 0.71391941], and it gave a mean cross-validation score of 0.74. Again, we graph the confusion matrix below
 
+![Confusion Matrix](conf3.png)
 
 ## Discussion
 ### Model 1 - Logistic Regression
