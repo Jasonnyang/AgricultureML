@@ -13,7 +13,8 @@ Essentially, this project is more than just a group project but a step towards e
 ### Data Exploration:
 Our initial step involves examining the dataset and finding the minimum, maximum, median, and counts of our dataset. We also identified that the missing values were encoded as -1 instead of NaN in our dataset. This step was crucial in guiding our preprocessing decisions and model selection. We created pairplots to uncover any hidden relationships in our data and we printed out the columns to see which features we wanted to include in our final model since we had 79 columns or features to choose from. Then we got histogram representations of each column to identify any distribution patterns.
 
-![Pairplots]([pairplot.png)
+![Pairplots](pairplot.png)
+
 ![Histograms](histogram.png)
 
 ### Preprocessing:
